@@ -5,7 +5,6 @@ import "./editVendor.css"
 import Form from "./form";
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
 import { useNavigate } from "react-router-dom";
 import { getAccount } from "./account";
 
@@ -24,9 +23,9 @@ export default function EditVendor() {
         <div>
             <Header setUser={setUser} user={user}/>
             <div className="container">
-                <div role="presentation" onClick={handleClick} className="form">
+                <div role="presentation" className="form">
                     <Breadcrumbs aria-label="breadcrumb">
-                        <Link underline="hover" color="inherit" href='/'>Vendors</Link>
+                        <div onClick={handleClick} className="pointer">Vendors</div>
                         <Typography color="text.primary">Edit Vendor</Typography>
                     </Breadcrumbs>
                 </div>

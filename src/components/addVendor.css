@@ -7,6 +7,10 @@
     margin-top: 0.5rem;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 @media (max-width: 1080px) {
     .form {
         width: 90%;
@@ -15,6 +19,6 @@
 
 @media (max-width: 720px) {
     .form input {
-        width: 300px !important;
+        width: 230px !important;
     }
 }

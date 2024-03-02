@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import Box from "@mui/material/Box";
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
-import { Link } from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { useState } from "react";
@@ -24,6 +23,11 @@ export default function VendorTable({ vendorData, setVendorData }) {
     let paginatedVendorData = vendorData.slice(start, (start+rows));
 
     const navigate = useNavigate();
+
+    const handleAdd = () => {
+        navigate('/addvendor')
+    }
+
     const handleEdit = (vendor) => {
         navigate('/editvendor', {state: {vendor}})
     }
@@ -39,8 +43,8 @@ export default function VendorTable({ vendorData, setVendorData }) {
         <div>
             <TableContainer className="container">
                 <Box className="addButton">
-                    <Button variant="contained" disableElevation sx={{borderRadius: '20px', marginBottom: '20px'}}>
-                        <Link to='/addvendor' className="link">Add Vendor</Link>
+                    <Button variant="contained" onClick={handleAdd} disableElevation sx={{borderRadius: '20px', marginBottom: '20px'}}>
+                        Add Vendor
                     </Button>
                 </Box>
                 <Table className="table">
