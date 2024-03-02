@@ -16,7 +16,9 @@ import Snackbar from "@mui/material/Snackbar";
 export default function Form(data) {
     const [disabled, setDisabled] = useState(true)
     const [loading, setLoading] = useState(false);
-    const [apiError, setApiError] = useState(false)
+    const [apiError, setApiError] = useState(false);
+    const [edited, setEdited] = React.useState(false);
+    const [added, setAdded] = React.useState(false);
     const navigate = useNavigate();
     const [vendor, setVendor] = useState({
         name: "" || data.data.name,
@@ -38,15 +40,26 @@ export default function Form(data) {
         }
     }
 
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+      setEdited(false);
+      setAdded(false);
+      navigate('/');
+    };
+
     const handleSubmit = async() => {
         try {
             setLoading(true);
             if (!data.data.name) {
+              await axios.put(`${config.endpoint}/vendors`, vendor);
+              setAdded(true);
             } else {
-              await axios.patch(`${config.endpoint}/vendors`, {id: data.data._id, vendor: vendor})
+              await axios.patch(`${config.endpoint}/vendors`, {id: data.data._id, vendor: vendor});
+              setEdited(true)
             }
             setLoading(false);
-            navigate('/');
         } catch(e) {
             setLoading(false);
             // console.log(e);
@@ -111,6 +124,34 @@ export default function Form(data) {
         <Button variant="contained" className="submitButton" disabled={disabled} onClick={() => handleSubmit()} >Save</Button>
         }
       </Box>
+      <Snackbar
+        open={edited}
+        autoHideDuration={2000}
+        onClose={handleClose}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          Vendor details edited successfully
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={added}
+        autoHideDuration={2000}
+        onClose={handleClose}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          Vendor details added successfully
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

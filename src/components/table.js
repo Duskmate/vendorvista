@@ -61,7 +61,7 @@ export default function VendorTable({ vendorData, setVendorData }) {
                                 <TableCell className="actionArea">
                                     <Box className="actionButtons">
                                         <IconButton aria-label="edit" onClick={() => handleEdit(vendor)}><EditIcon /></IconButton>
-                                        <AlertDialog vendor={vendor} setDeleted={setDeleted} setVendorData={setVendorData} setApiError={setApiError}/>
+                                        <AlertDialog vendor={vendor} setDeleted={setDeleted} setVendorData={setVendorData} setApiError={setApiError} />
                                     </Box>
                                 </TableCell>
                             </TableRow>

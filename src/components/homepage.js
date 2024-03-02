@@ -38,7 +38,6 @@ export default function Hompage() {
                     </div>
                 </div>
             }
-            
         </div>
     )
 }
