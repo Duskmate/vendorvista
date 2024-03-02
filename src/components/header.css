@@ -1,0 +1,39 @@
+.navbar {
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #e5e8eb;
+    align-items: center;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar .logo {
+    text-decoration: none;
+    color: #363657;
+    cursor: default;
+    font-weight: 600;
+
+}
+
+.navbar .menu {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 720px) {
+    .desktop {
+        display: none;
+    }
+    .navbar {
+        justify-content: center;
+    }
+    .navbar .menu {
+        width: 100%;
+        justify-content: end;
+    }
+}

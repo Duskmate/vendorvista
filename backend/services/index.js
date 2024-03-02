@@ -1,0 +1,1 @@
+module.exports.vendorService = require("./vendor.service");

@@ -1,0 +1,1 @@
+module.exports.vendorValidation = require("./vendor.validation");

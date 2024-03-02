@@ -1,0 +1,20 @@
+.form {
+    width: 50%;
+    margin: auto;
+}
+
+.form .add {
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 1080px) {
+    .form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 720px) {
+    .form input {
+        width: 300px !important;
+    }
+}

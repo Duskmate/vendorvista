@@ -1,0 +1,43 @@
+.container {
+    max-width: 70%;
+    margin: 0px auto;
+    margin-top: 4rem;
+}
+
+.container .link {
+    text-decoration: none;
+    color: white;
+}
+
+.container .addButton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container .table .tableHeader {
+    font-weight: 600;
+    text-align: center;
+}
+
+.container .table .actionArea {
+    padding-left: 0px;
+}
+
+.container .table .actionArea .actionButtons {
+    display: flex;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+}
+
+@media (max-width: 720px) {
+    .pagination .row {
+        display: none;
+    }
+    .pagination {
+        justify-content: center;
+    }
+}
