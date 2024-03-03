@@ -85,7 +85,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Duskmate/AdminUI.git
+   git clone https://github.com/Duskmate/vendorvista.git
    ```
 2. Install NPM packages
    ```sh
