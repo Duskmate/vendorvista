@@ -5,7 +5,7 @@ import AddVendor from './components/addVendor';
 import EditVendor from './components/editVendor'
 
 export const config = {
-  endpoint: `https://vendorvista.onrender.com/v1`,
+  endpoint: `https://vendorvista.vercel.app/v1`,
 };
 
 function App() {
